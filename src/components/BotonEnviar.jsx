@@ -1,9 +1,10 @@
 import React from 'react'
+import "../styles/BotonEnviar.css"
 
 const Boton = ({click}) => {
   return (
     <div>
-        <button onClick={click}>Agregar</button>
+        <a href="#" class="send">Agregar Tarea</a>
     </div>
   )
 }

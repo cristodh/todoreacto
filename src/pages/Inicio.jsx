@@ -1,15 +1,15 @@
 import React from 'react'
 import InputTarea from '../components/InputTarea'
-import Boton from '../components/Boton'
+import Logo from '../components/Logo'
 
 const Inicio = () => {
   return (
     <div>
+
+        <div>
+            <Logo/>
+        </div>
         <InputTarea/>
-
-        <Boton click={()=>alert('hola')}/>
-       
-
     </div>
   )
 }
