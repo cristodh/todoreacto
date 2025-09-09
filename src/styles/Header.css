@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "titleFont";
+    src: url(../fonts/Moccalatte.otf);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(247, 210, 100, 0.577);
+    font-family: "titleFont",Arial, Helvetica, sans-serif
+}

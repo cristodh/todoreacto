@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Inicio from './pages/Inicio'
+import Home from './pages/Home'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Inicio/>
+    <Home/>
   </StrictMode>,
 )
  

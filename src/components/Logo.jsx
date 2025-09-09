@@ -1,9 +1,10 @@
 import React from 'react'
+import "../styles/Logo.css"
 
 function Logo() {
   return (
     <div>
-        <img src="../src\images\LOGOTODOLIST.png" alt="logo" />
+        <img className='logo' src="../src\images\LOGOTODOLIST.png" alt="logo" />
     </div>
   )
 }
