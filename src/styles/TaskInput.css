@@ -1,4 +1,9 @@
-.taskInput{
+.columnaIzquierda{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.columnaDerecha {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
