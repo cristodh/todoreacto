@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import "../styles/Task.css"
 
-function Task() {
+function Task({title,description,date,clickDelete}) {
     const [showDropDown, setShowDropDown] = useState(false)
     return (
         <div className="task-card">
             <div className="task-header">
-                <h3 className="task-title">Title</h3>
+                <h3 className="task-title">{title}</h3>
                 <button
                     className="toggle-btn"
                     onClick={() => setShowDropDown(!showDropDown)}
@@ -17,10 +17,10 @@ function Task() {
 
             {showDropDown && (
                 <div className="task-details">
-                    <p className="task-field"><strong>Title:</strong> Title Content</p>
-                    <p className="task-field"><strong>Description:</strong> Description Content</p>
-                    <p className="task-field"><strong>Date Created:</strong> Date Content</p>
-                    <button className="remove-btn">Remove</button>
+                    <p className="task-field"><strong>Title:</strong>{title}</p>
+                    <p className="task-field"><strong>Description:</strong>{description}</p>
+                    <p className="task-field"><strong>Date Created:</strong>{date}</p>
+                    <button className="remove-btn" onClick={clickDelete}>Remove</button>
                 </div>
             )}
         </div>

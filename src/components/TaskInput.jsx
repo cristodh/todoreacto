@@ -5,17 +5,19 @@ import { postData, getData, delData, patchData } from '../services/fetchs.js'
 const TaskInput = () => {
     const [taskTitle, setTaskTitle] = useState('')
     const [taskDescription, setTaskDescription] = useState('')
-
+    const fecha = new Date()
 
     /*POST DATA PROCESS*/
     async function postTasks() {
         if (!taskTitle || !taskDescription) {  //validacion
-            alert('METASE EN LA VARA')
+            alert('Todos los campos tienen que estar completos')
             return
         }
         const taskObj = {
             Title: taskTitle,
-            Description: taskDescription
+            Description: taskDescription,
+            date: `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`
+            
             
         }
         console.log(taskObj);

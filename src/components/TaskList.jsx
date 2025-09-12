@@ -1,20 +1,26 @@
 import React from 'react'
 import Task from './Task'
 
-function TaskList() {
+function TaskList({tasksList}) {
   return (
     <div>
-      <div className="tabs">
-        <button className="tab" data-tab="Pending">Pending</button>
-        <button className="tab" data-tab="completed">Completed</button>
-        <button className="tab" data-tab="deleted">Deleted</button>
-      </div>
+      {/* 
+        Tenemos que usar la lista de tareas (taskList) para mostrar el componente Task
 
-      <div className="contenido-tabs">
-        <div className="solicitud" id="solicitud">
-          <Task/>
-        </div>
-      </div>
+        HAY QUE USAR UN .map
+      */}
+      {/* 
+        Crear la funcion de eliminar asicrona y que parametro reciba el id
+
+        Ejecutar el delData adentro de la funcion
+
+        Pasar esta funcion en el componente Task
+      */}
+      {tasksList.map((lista)=>{
+        return(
+          <Task title={lista.Title} description={lista.Description} date={''} />
+        )
+      })}
     </div>
   )
 }
