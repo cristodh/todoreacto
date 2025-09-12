@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import BotonEnviar from './BtnSend'
 import '../styles/TaskInput.css'
 import { postData, getData, delData, patchData } from '../services/fetchs.js'
 
@@ -19,6 +18,8 @@ const TaskInput = () => {
             Description: taskDescription
             
         }
+        console.log(taskObj);
+        
         const response = await postData(taskObj, 'tasks');
         console.log('Task Saved: ', response);
 
@@ -26,7 +27,8 @@ const TaskInput = () => {
         setTaskDescription('');
     }
 
-
+    console.log(taskTitle,taskDescription);
+    
 
     return (
         <div>
@@ -37,16 +39,17 @@ const TaskInput = () => {
                     if (e.key === 'Enter') {
                         postTasks()
                     }
-                }} type="text" placeholder='Nombre tarea'   maxLength={20} value={taskTitle} onChange={function (e) { setTaskTitle(e.target.value) }} />  {/*  largo */}
+                }} type="text" placeholder='Task title'   maxLength={20} value={taskTitle} onChange={(e) => setTaskTitle(e.target.value)} />  {/*  largo */}
                 <br />
                 <input onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                         postTasks()
                     }
-                }} type="text" placeholder='Descripcion' maxLength={100} value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)} /> {/*  corto */}
-                <BotonEnviar click={() => postTasks()} />
-            </div>
-            <div className='columnaDerecha'>
+                }} type="text" placeholder='Description' maxLength={100} value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)} /> {/*  corto */}
+                <br />
+                <div className='divBtnSend'>
+                    <button className='btnSend' onClick={postTasks}>Send</button>
+                </div>
             </div>
         </div>
     )

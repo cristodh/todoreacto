@@ -1,23 +1,31 @@
 import React, { useState } from 'react'
+import "../styles/Task.css"
 
 function Task() {
     const [showDropDown, setShowDropDown] = useState(false)
     return (
-        <div>
-            <h3>Title: </h3>
-            <button onClick={()=>setShowDropDown(!showDropDown)}>{!showDropDown ? "Mostrar" : "Ocultar"}</button>
-            {showDropDown && ( //condicional
-                <div>
-                    <p>Title Content</p>
-                    <h4>Description: </h4>
-                    <p>Description Content</p>
-                    <h4>Date Created: </h4>
-                    <p>Date Content</p>
-                    <button>Remove</button>
+        <div className="task-card">
+            <div className="task-header">
+                <h3 className="task-title">Title</h3>
+                <button
+                    className="toggle-btn"
+                    onClick={() => setShowDropDown(!showDropDown)}
+                >
+                    {!showDropDown ? "Mostrar" : "Ocultar"}
+                </button>
+            </div>
+
+            {showDropDown && (
+                <div className="task-details">
+                    <p className="task-field"><strong>Title:</strong> Title Content</p>
+                    <p className="task-field"><strong>Description:</strong> Description Content</p>
+                    <p className="task-field"><strong>Date Created:</strong> Date Content</p>
+                    <button className="remove-btn">Remove</button>
                 </div>
             )}
         </div>
-    )
+    );
+
 }
 /*renderizado condicional reat*/
 export default Task
