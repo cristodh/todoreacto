@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className='header'>
         <Logo/> 
-        <h1>Hello *user_name*</h1>
+        <h1>¡WELCOME!</h1>
         <BtnLogOut/>
     </div>
   )

@@ -1,14 +1,48 @@
 @font-face {
-    font-family: "titleFont";
-    src: url(../fonts/Moccalatte.otf);
+  font-family: "titleFont";
+  src: url(../fonts/Moccalatte.otf);
 }
 
 .header {
-    display: grid;
-    grid-template-columns: 4fr 4fr 4fr;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: rgba(247, 210, 100, 0.577);
-    font-family: "titleFont",Arial, Helvetica, sans-serif
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; 
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px 30px; 
+  
+  background: linear-gradient(
+    135deg,
+    rgb(82, 176, 177),
+    rgb(62, 62, 62)
+  ); 
+  
+  font-family: "titleFont", Arial, Helvetica, sans-serif;
+  color: #333;
+  
+  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* títulos */
+.header h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* botones o enlaces dentro del header */
+.header a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.header a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }

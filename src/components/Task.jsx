@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../styles/Task.css"
 
-function Task({title,description,date,clickDelete,state,clickComplete}) {
+function Task({title,description,date,clickDelete,state,clickComplete,clickEdit}) {
     const [showDropDown, setShowDropDown] = useState(false)
     return (
         <div className="task-card">
@@ -24,6 +24,7 @@ function Task({title,description,date,clickDelete,state,clickComplete}) {
                    
                     <button className="remove-btn" onClick={clickDelete}>Remove</button>
                     <button className={state=== 'Pending' ? "pending-btn" : "complete-btn"} onClick={clickComplete}>{state}</button>
+                    <button className="edit-btn" onClick={clickEdit}>Edit</button>
                 </div>
             )}
         </div>
