@@ -6,7 +6,6 @@ const TaskInput = () => {
     const [taskTitle, setTaskTitle] = useState('')
     const [taskDescription, setTaskDescription] = useState('')
     const fecha = new Date()
-
     /*POST DATA PROCESS*/
     async function postTasks() {
         if (!taskTitle || !taskDescription) {  //validacion
@@ -16,20 +15,18 @@ const TaskInput = () => {
         const taskObj = {
             Title: taskTitle,
             Description: taskDescription,
-            date: `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`
+            Date: `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`,
+            Status: "Pending"
             
             
         }
-        console.log(taskObj);
         
-        const response = await postData(taskObj, 'tasks');
-        console.log('Task Saved: ', response);
+        await postData(taskObj, 'tasks');
 
         setTaskTitle('');
         setTaskDescription('');
     }
 
-    console.log(taskTitle,taskDescription);
     
 
     return (

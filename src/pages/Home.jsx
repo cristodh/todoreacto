@@ -14,7 +14,7 @@ function Home() {
       setListaTareas(data)
     }
     traerTareas()
-  }, [])
+  }, [listaTareas])
   
 
   return (

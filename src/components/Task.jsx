@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../styles/Task.css"
 
-function Task({title,description,date,clickDelete}) {
+function Task({title,description,date,clickDelete,state,clickComplete}) {
     const [showDropDown, setShowDropDown] = useState(false)
     return (
         <div className="task-card">
@@ -17,15 +17,17 @@ function Task({title,description,date,clickDelete}) {
 
             {showDropDown && (
                 <div className="task-details">
-                    <p className="task-field"><strong>Title:</strong>{title}</p>
-                    <p className="task-field"><strong>Description:</strong>{description}</p>
-                    <p className="task-field"><strong>Date Created:</strong>{date}</p>
+                    <p className="task-field"><strong>Title: </strong>{title}</p>
+                    <p className="task-field"><strong>Description: </strong>{description}</p>
+                    <p className="task-field"><strong>Date Created: </strong>{date}</p>
+                    <p className="task-field"><strong>Status: </strong>{state}</p>
+                   
                     <button className="remove-btn" onClick={clickDelete}>Remove</button>
+                    <button className={state=== 'Pending' ? "pending-btn" : "complete-btn"} onClick={clickComplete}>{state}</button>
                 </div>
             )}
         </div>
     );
 
 }
-/*renderizado condicional reat*/
 export default Task

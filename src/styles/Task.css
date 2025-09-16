@@ -62,7 +62,26 @@
   margin-top: 10px;
   transition: 0.2s;
 }
-
+.pending-btn {
+  background: #dcc035;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+.complete-btn {
+  background: #10b715;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
 .remove-btn:hover {
   background: #a71d2a;
 }

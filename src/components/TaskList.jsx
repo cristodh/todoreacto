@@ -1,24 +1,29 @@
 import React from 'react'
 import Task from './Task'
+import { delData, patchData } from '../services/fetchs.js'
 
 function TaskList({tasksList}) {
+  async function eliminarTarea(id) {
+    await delData('tasks',id)
+  }
+
+  async function completarTarea(id,state) {
+      await patchData('tasks',{'Status': state === 'Pending' ? 'Complete' : 'Pending'},id)
+  }
   return (
     <div>
-      {/* 
-        Tenemos que usar la lista de tareas (taskList) para mostrar el componente Task
-
-        HAY QUE USAR UN .map
-      */}
-      {/* 
-        Crear la funcion de eliminar asicrona y que parametro reciba el id
-
-        Ejecutar el delData adentro de la funcion
-
-        Pasar esta funcion en el componente Task
-      */}
       {tasksList.map((lista)=>{
         return(
-          <Task title={lista.Title} description={lista.Description} date={''} />
+          <Task
+          key={lista.id}
+          title={lista.Title}
+          description={lista.Description}
+          date={lista.Date}
+          state={lista.Status}
+          clickComplete={()=>completarTarea(lista.id,lista.Status)}
+          clickDelete={()=>eliminarTarea(lista.id)}
+          />
+          
         )
       })}
     </div>
